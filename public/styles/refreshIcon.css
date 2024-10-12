@@ -1,0 +1,55 @@
+.reloadSingle {
+  position: relative;
+  top: -7%;
+  margin-left: auto;
+  height: 2em;
+  padding: 0.25em;
+  width: 2em;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+  }
+  &:before {
+    border-color: transparent white white white;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.125em;
+    height: 1.5em;
+    width: 1.5em;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  &:after {
+    border-color: transparent transparent transparent white;
+    border-style: solid;
+    border-width: 0.3125em 0 0.3125em 0.5em;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+  }
+}
+.rotateIcon {
+  /* -webkit-animation: rotate 1.5s linear infinite; */
+  animation: rotate 1.5s linear infinite;
+}
+.stopIcon {
+  animation: stop_rotating 1.5s linear infinite;
+}
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes stop_rotating {
+  100% {
+    transform: rotate(0deg);
+  }
+}
